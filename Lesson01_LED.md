@@ -50,4 +50,5 @@ Now, we need to connect our Arduino to the computer so that we can upload the co
 Once the program is uploaded, you should see your Arduino turn on, and the light should start blinking! You have now written your first Arduino program.
 
 Previous: [Hardware 101](/README.md)
-Next: [Lesson 2: Pressing the Button](/Lesson02_Button.md)
+
+Next: [Lesson 2: Pressing a Button](/Lesson02_Button.md)
