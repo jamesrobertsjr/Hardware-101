@@ -4,15 +4,7 @@
 
 You will need the Grove Beginner Kit, as well as two additional devices (the mini PIR sensor and the LED light stick) for this workshop.
 
-We will use the Arduino IDE to write programs to send to our Arduino. We'll write the code on our laptops, then send the program to the Arduino to run on that device.
-
-Install the Arduino software for your OS here: <https://www.arduino.cc/en/software>
-
-![Arduino Download](assets/download-arduino.png)
-
-When prompted, you can click "Just Download".
-
-![Just Download](assets/just-download.png)
+To write programs for the Arduino and upload them to the device, you will need the [Arduino IDE](https://www.arduino.cc/en/software) software and the [USB Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) installed onto your computer. Further instructions for this setup are [below](#software-setup).
 
 ## Hardware Basics
 
@@ -22,11 +14,13 @@ If you consider your laptop, the keyboard, mouse, and webcam are input devices, 
 
 Today, we will be working with an Arduino. An Arduino is a single-board micro-controller that can be used to build small, digital computational devices.
 
-The Arduino device included in your Beginner Kit is called a Seeeduino. This device is made up of a motherboard, a micro-controller (MCU), several input and output ports, and pins. Input and output devices and sensors are connected to the Seeeduino via pins and wires. Your beginner kit is essentially a giant motherboard that directly connects several sensors to the Seeeduino for us; however, additional sensors can be connected to the device using wires and pins.
+The Arduino device included in your Beginner Kit is technically called a [Seeeduino Lotus](https://wiki.seeedstudio.com/Seeeduino_Lotus/), but we will refer to it as an Arduino throughout these lesson materials.
 
-![Seeeduino](assets/seeeduino.png)
+Your Arduino device is made up of a motherboard, a micro-controller (MCU), several input and output ports, and pins. Input and output devices and sensors are connected to the Arduino via pins and wires. Your beginner kit is essentially a giant motherboard that directly connects several sensors to the Arduino for us; however, additional sensors can be connected to the device using wires and pins.
 
-Let's look at some of the important pieces of the Seeeduino computer:
+![Seeeduino Lotus](assets/seeeduino.png)
+
+Let's look at some of the important pieces of the Arduino computer:
 
 - Analog Pins (A0-A5)
 - Digital Pins (D0-D13)
@@ -42,7 +36,7 @@ Let's look at some of the important pieces of the Seeeduino computer:
 
 ### Sensors
 
-Connected to our Seeeduino are multiple input and output sensors. Each sensor is pre-connected to a specific pin, which is labeled on the kit.
+Connected to our Arduino are multiple input and output sensors. Each sensor is pre-connected to a specific pin, which is labeled on the kit.
 
 ![Beginner board](assets/arduino-beginner-board.jpg)
 
@@ -64,6 +58,20 @@ You should also have two additional external sensors which we can connect to the
 - Mini PIR Sensor
 - LED Strip
 
+## Software Setup
+
+We will use the Arduino IDE to write programs to send to our Arduino. This software will allow us to write code on our laptops, then send the program to the Arduino to run on the device.
+
+Install the Arduino software for your OS here: <https://www.arduino.cc/en/software>
+
+![Arduino Download](assets/download-arduino.png)
+
+When prompted, you can click "Just Download".
+
+![Just Download](assets/just-download.png)
+
+You will also need to install a USB driver so that your computer recognizes the Arduino device when its plugged in. You can download the [CP2102 USB Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) here. Click "Downloads" when you get to the webpage and select the software for your operating system.
+
 ## Arduino IDE
 
 When you open the Arduino IDE, you will see an empty Arduino program. Each Arduino program is comprised of two primary functions: `setup()` and `loop()`.
@@ -74,39 +82,15 @@ The `setup()` function used to initialize the program. We can initialize pins as
 
 The `loop()` function is an infinite loop that will continually execute commands. This looping mechanism allows us to continually check for input, process, data, and control the output of the computer.
 
-The program will start when the Arduino receives power or when you press the Reset button. Let's write our first program!
+The program will start when the Arduino receives power, and will restart when you press the Reset button.
 
-## Activity #1 - Turn on the Light
+Before we can upload a program to the Arduino, you will need to confirm that the correct device is configured in the IDE.
 
-The LED is a digital output, which means it operates on a digital signal. This will be a discrete value: 0 or 1. For our Arduino, this means `LOW(0V)` for 0, `HIGH(5V)` for 1.
+- Go to `Tools` > `Board` in the menu and confirm that `Arduino Uno` is selected.
+- Go to `Tools` > `Port` and select:
+  - `COM1` or `COM11` for Windows (it should say `Arduino Uno` next to the correct option)
+  - `/dev/cu.SLAB_USBtoUART` for Mac
 
-For the Seeeduino to interact with the LED, we will need to do two things: register the LED as an output device, then send it a digital signal.
+Now we're ready to write our first program!
 
-We will register the LED as an output device in our `setup()` function. First, we’ll define a global variable for the LED pin.
-
-```c
-int LED_PIN = D4;
-
-void setup() {
-    pinMode(LED_PIN, OUTPUT);
-}
-```
-
-Next, in the `loop()` function, we will send a digital signal to the light to turn it on and off.
-
-```c
-void loop() {
-    digitalWrite(LED_PIN, HIGH);
-    delay(1000);
-    digitalWrite(LED_PIN, LOW);
-    delay(1000);
-}
-```
-
-The `digitalWrite()` method takes two parameters: the location where we want to send the signal, and the signal we want to send. Here, we’re sending `HIGH` (5V) and `LOW` (0V) signals to our `LED_PIN` with a 1000 millisecond delay in between each signal.
-
-Once our program is written, we need to verify the code and send it to our Arduino.
-
-![verify](assets/verify.png)
-
-![upload](assets/upload.png)
+Next: [Lesson 1: Turn on the Light](/Lesson01_LED)
