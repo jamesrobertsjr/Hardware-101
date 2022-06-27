@@ -107,3 +107,5 @@ void loop() {
 ```
 
 </details>
+
+Previous: [Lesson 1: Turn on the Light](/Lesson01_LED.md)

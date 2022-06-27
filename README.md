@@ -93,4 +93,4 @@ Before we can upload a program to the Arduino, you will need to confirm that the
 
 Now we're ready to write our first program!
 
-Next: [Lesson 1: Turn on the Light](/Lesson01_LED)
+Next: [Lesson 1: Turn on the Light](/Lesson01_LED.md)
