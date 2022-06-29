@@ -50,7 +50,7 @@ void loop() {
 
 The `digitalRead()` method takes a single parameter, the pin from which we want to read the signal. This will either be `1` (`HIGH`) or `0` (`LOW`). We then take that value and write a corresponding signal to the LED pin.
 
-## Running the Program
+## Run the Program
 
 Verify that your code compiles and then send the program to your Arduino using the Upload button. You should see that when the button is pressed, the light turns on, and when the button is not pressed, the light is off.
 
@@ -109,3 +109,5 @@ void loop() {
 </details>
 
 Previous: [Lesson 1: Turn on the Light](/Lesson01_LED.md)
+
+Next: [Lesson 3: Buzzer Doorbell](/Lesson03_Buzzer.md)
