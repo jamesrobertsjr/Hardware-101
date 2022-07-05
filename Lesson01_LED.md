@@ -8,9 +8,11 @@ For the Arduino to interact with the LED, we will need to do two things: registe
 
 ## Write the Program
 
-We will register the LED as an output device in our `setup()` function. First, we’ll define a global variable for the LED pin.
+Create a new file in Arduino using the `File` > `New` menu command. Save the project with a descriptive name, like `Lesson01_LED.ino` or `LED_Sketch.ino`.
 
-```c
+To begin, we will register the LED as an output device in our `setup()` function. First, we’ll define a global variable for the LED pin, then set the LED pin mode to `OUTPUT`.
+
+```c++
 int LED_PIN = 4;
 
 void setup() {
@@ -20,7 +22,7 @@ void setup() {
 
 Next, in the `loop()` function, we will send a digital signal to the light to turn it on and off.
 
-```c
+```c++
 void loop() {
     digitalWrite(LED_PIN, HIGH);
     delay(1000);

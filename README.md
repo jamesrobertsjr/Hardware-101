@@ -6,6 +6,15 @@ You will need the Grove Beginner Kit, as well as two additional devices (the min
 
 To write programs for the Arduino and upload them to the device, you will need the [Arduino IDE](https://www.arduino.cc/en/software) software and the [USB Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) installed onto your computer. Further instructions for this setup are [below](#software-setup).
 
+## Table of Contents
+
+| Title | Components |
+| --- | --- |
+| [Lesson 1: Turn on the Light](/Lesson01_LED.md) | LED |
+| [Lesson 2: Pressing a Button](/Lesson02_Button.md) | LED, Button |
+| [Lesson 3: Doorbell Buzzer](/Lesson03_Buzzer.md) | Button, Buzzer |
+| [Lesson 4: Digital Dice](/Lesson04_OLED.md) | OLED Display, Button |
+
 ## Hardware Basics
 
 Every computer is made up of three basic components: input, output, and a controller. An input device is how we send commands or data into the computer, an output device is how the computer communicates data back to the user, and the controller is where data is processed and stored within the machine.
@@ -40,18 +49,18 @@ Connected to our Arduino are multiple input and output sensors. Each sensor is p
 
 ![Beginner board](assets/arduino-beginner-board.jpg)
 
-| Sensor | Default Pin |
-| --- | --- |
-| LED | Digital D4 |
-| Buzzer | Digital D5 |
-| OLED Display | I2C |
-| Button | Digital D6 |
-| Rotary Potentiometer | Analog A0 |
-| Light Sensor | Analog A6 |
-| Sound Sensor | Analog A2 |
-| Temperature & Humidity Sensor | Digital D3 |
-| Air Pressure Sensor | I2C |
-| Accelerometer | I2C |
+| Sensor | Pin Type | Pin # |
+| --- | --- | --- |
+| LED | Digital | 4 |
+| Buzzer | Digital | 5 |
+| OLED Display | I2C | I2C |
+| Button | Digital | 6 |
+| Rotary Potentiometer | Analog | A0 |
+| Light Sensor | Analog | A6 |
+| Sound Sensor | Analog | A2 |
+| Temperature & Humidity Sensor | Digital | 3 |
+| Air Pressure Sensor | I2C | I2C |
+| Accelerometer | I2C | I2C |
 
 You should also have two additional external sensors which we can connect to the device manually:
 

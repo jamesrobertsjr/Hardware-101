@@ -8,11 +8,13 @@ Similar to when we connected to the LED, to interact with the button and read it
 
 ## Write the Program
 
-We will register both the LED and the button as input and output devices in our `setup()` function, and will define global variables for the corresponding pins.
+Create a new program in the Arduino IDE.
+
+To begin, we will register both the LED and the button as input and output devices in our `setup()` function, and will define global variables for the corresponding pins.
 
 > Hint: the pins are indicated next to each sensor. `D6` means that the button uses digital pin number 6.
 
-```c
+```c++
 int LED_PIN = 4;
 int BUTTON_PIN = 6;
 
@@ -26,7 +28,7 @@ You can see here that we registered the LED as an output device and the button a
 
 In the `loop()` function, we will read the digital signal from the button and turn the light on or off according to whether the button is pressed.
 
-```c
+```c++
 void loop() {
   int buttonState = digitalRead(BUTTON_PIN);
 
@@ -41,7 +43,7 @@ void loop() {
 
 This could also be simplified to the following:
 
-```c
+```c++
 void loop() {
   int buttonState = digitalRead(BUTTON_PIN);
   digitalWrite(LED_PIN, buttonState);
@@ -71,7 +73,7 @@ The light should begin in an off state. When the button is pressed, the light sh
 <details>
 <summary>Button/Light Toggle Program</summary>
   
-```c
+```c++
 int LED_PIN = 4;
 int BUTTON_PIN = 6;
 

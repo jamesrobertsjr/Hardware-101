@@ -16,9 +16,9 @@ We will register the buzzer as an `OUTPUT` pin. Then, we'll send a PWM signal to
 
 ## Button Buzzer Program
 
-We will start by simply using the button to plan a buzzer sound. This program will be almost identical to our LED/button example. We'll register both the button and buzzer pins as input/output devices, then read the button's value to trigger the buzzer's beep.
+Let's create a new buzzer program. We will start by simply programming the button to play a buzzer sound when pressed. This program will be almost identical to our LED/button example. We'll register both the button and buzzer pins as input/output devices, then read the button's value to trigger the buzzer's beep.
 
-```c
+```c++
 int BUZZ_PIN = 5;
 int BUTTON_PIN = 6;
 
@@ -49,7 +49,7 @@ Although we can modulate the pulse of our signal with `analogWrite()`, this meth
 
 The `tone()` function accepts three parameters: the pin, the note value, and the duration (in ms). For example, this would play a `C` note for one second:
 
-```c
+```c++
 tone(BUZZ_PIN, 65, 1000);
 ```
 
@@ -100,7 +100,7 @@ int numNotes = 16;
 
 Now we can define a function at the end of the program to loop through our melody array and play each note:
 
-```c
+```c++
 void playTune() {
   for (int noteIdx = 0; noteIdx < numNotes; noteIdx++) {
     // convert duration to milliseconds
@@ -131,3 +131,5 @@ Great! Now, if you upload and run the program, you can hear our custom "doorbell
 Play around with the program to write your own tune!
 
 Previous: [Lesson 2: Pressing a Button](/Lesson02_Button.md)
+
+Next: [Lesson 4: Digital Dice](/Lesson04_OLED.md)
