@@ -56,59 +56,7 @@ The `digitalRead()` method takes a single parameter, the pin from which we want 
 
 Verify that your code compiles and then send the program to your Arduino using the Upload button. You should see that when the button is pressed, the light turns on, and when the button is not pressed, the light is off.
 
-## Challenge
-
-For a programming challenge, alter your button program to meet the following requirements:
-
-### Prompt
-
-Write a program to toggle the light on and off using a button press.
-
-### Requirements
-
-The light should begin in an off state. When the button is pressed, the light should turn on and stay on until the button is pressed a second time. The light should toggle on and off with each button press.
-
-### Solution
-
-<details>
-<summary>Button/Light Toggle Program</summary>
-  
-```c++
-int LED_PIN = 4;
-int BUTTON_PIN = 6;
-
-int prevBtnState = 0;
-int lightOn = false;
-
-void setup() {
-    pinMode(LED_PIN, OUTPUT);
-    pinMode(BUTTON_PIN, INPUT);
-}
-
-void loop() {
-    int buttonState = digitalRead(BUTTON_PIN);
-
-    // Check for button press
-    if (buttonState != prevBtnState && buttonState == 1) {
-        // Turn light on if it was previously off
-        if (!lightOn) {
-        digitalWrite(LED_PIN, HIGH);
-        lightOn = true;
-        }
-        else {
-        digitalWrite(LED_PIN, LOW);
-        lightOn = false;
-        }
-        // Delay to prevent input noise
-        delay(300);
-    }
-
-    // Remember button state
-    prevBtnState = buttonState;
-}
-```
-
-</details>
+Programming Challenge: [Button Light Toggle](/Challenges.md#button-light-toggle)
 
 Previous: [Lesson 1: Turn on the Light](/Lesson01_LED.md)
 

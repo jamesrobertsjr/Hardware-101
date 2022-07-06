@@ -14,6 +14,11 @@ To write programs for the Arduino and upload them to the device, you will need t
 | [Lesson 2: Pressing a Button](/Lesson02_Button.md) | LED, Button |
 | [Lesson 3: Doorbell Buzzer](/Lesson03_Buzzer.md) | Button, Buzzer |
 | [Lesson 4: Digital Dice](/Lesson04_OLED.md) | OLED Display, Button |
+| [Lesson 5: Rotary Option Selector](/Lesson05_Rotary.md) | Potentiometer, OLED, Button, Buzzer, Serial Monitor |
+| [Lesson 6: Night Light](/Lesson06_LightDetect.md) | Light Detector, LED, Serial Plotter |
+| [Lesson 7: Sound Meter](/Lesson07_RGB_LED.md) | Sound Detector, RGB LED Strip |
+
+| [Challenges](/Challenges.md) | All |
 
 ## Hardware Basics
 

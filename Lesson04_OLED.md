@@ -217,16 +217,9 @@ void rollDice() {
 
 If you have not already been iteratively testing the program, it's now time to run our app! Upload the program and run it on the Arduino to test out the die roll. When the program first starts, it should display the "Roll the die!" message. Then, when you press the button, the die roll animation should appear and then land on a random number.
 
-## Above and Beyond
+What are some ways you could improve or expand this program to make it your own?
 
-What are some ways you could improve or expand this program?
-
-- Displaying two dice instead of one
-- Drawing circles on the die face instead of printing numbers
-- Playing sounds with the die roll
-- Etc.
-
-Practice playing with your Arduino to expand this program and make it your own!
+Programming Challenge: [Double Dice Roll](/Challenges.md#double-dice-roll)
 
 Previous: [Lesson 3: Buzzer Doorbell](/Lesson03_Buzzer.md)
 
