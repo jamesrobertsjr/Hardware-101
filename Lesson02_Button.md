@@ -1,4 +1,4 @@
-# Lesson 2: Pressing a Button
+# Lesson 2: Press a Button
 
 ## Digital Input
 
@@ -56,8 +56,10 @@ The `digitalRead()` method takes a single parameter, the pin from which we want 
 
 Verify that your code compiles and then send the program to your Arduino using the Upload button. You should see that when the button is pressed, the light turns on, and when the button is not pressed, the light is off.
 
-Programming Challenge: [Button Light Toggle](/Challenges.md#button-light-toggle)
+## Programming Challenge
 
-Previous: [Lesson 1: Turn on the Light](/Lesson01_LED.md)
+Can you create a better UX for this program? Check out this challenge: [Button Light Toggle](/Challenges.md#button-light-toggle)
 
-Next: [Lesson 3: Buzzer Doorbell](/Lesson03_Buzzer.md)
+Previous Topic: [Lesson 1: Turn on the Light](/Lesson01_LED.md)
+
+Next Topic: [Lesson 3: Buzzer Doorbell](/Lesson03_Buzzer.md)

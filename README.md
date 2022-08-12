@@ -11,42 +11,43 @@ To write programs for the Arduino and upload them to the device, you will need t
 | Title | Components |
 | --- | --- |
 | [Lesson 1: Turn on the Light](/Lesson01_LED.md) | LED |
-| [Lesson 2: Pressing a Button](/Lesson02_Button.md) | LED, Button |
+| [Lesson 2: Press a Button](/Lesson02_Button.md) | LED, Button |
 | [Lesson 3: Doorbell Buzzer](/Lesson03_Buzzer.md) | Button, Buzzer |
-| [Lesson 4: Digital Dice](/Lesson04_OLED.md) | OLED Display, Button |
-| [Lesson 5: Rotary Option Selector](/Lesson05_Rotary.md) | Potentiometer, OLED, Button, Buzzer, Serial Monitor |
-| [Lesson 6: Night Light](/Lesson06_LightDetect.md) | Light Detector, LED, Serial Plotter |
-| [Lesson 7: Sound Meter](/Lesson07_RGB_LED.md) | Sound Detector, RGB LED Strip |
-
-| [Challenges](/Challenges.md) | All |
+| [Lesson 4: Display Text](/Lesson04_OLED.md) | OLED Display |
+| [Lesson 5: Digital Dice](/Lesson05_OLED_Pt2.md) | OLED Display, Button |
+| [Lesson 6: Graph Data](/Lesson06_Rotary.md) | Rotary Potentiometer, Serial Monitor, Serial Plotter |
+| [Lesson 7: Sound Meter](/Lesson07_RGB_LED.md) | RGB LED Strip, Sound Detector |
+| [Programming Challenges](/Challenges.md) | All |
 
 ## Hardware Basics
 
-Every computer is made up of three basic components: input, output, and a controller. An input device is how we send commands or data into the computer, an output device is how the computer communicates data back to the user, and the controller is where data is processed and stored within the machine.
+Every computing device is made up of four basic components: input, output, storage, and a controller. An input device is how we send commands or data into the computer, an output device is how the computer communicates data back to the user, storage is used to store data and instructions, and the controller is where data is processed within the machine.
 
-If you consider your laptop, the keyboard, mouse, and webcam are input devices, the screen and any LEDs are output devices, and the CPU, RAM, and hard drive make up the controller that processes commands. Some components may act as both an input and output device. Consider the touchscreen on a smartphone: this operates as both an input and output device for the computer.
+Some devices use what is called a **microcontroller**. A microcontroller is a chip that contains both a controller and storage, and is pre-programmed to do a designated task. If you consider a microwave, it has a simple microcontroller that is responsible for responding to button input, setting a timer, turning on the microwave, and then beeping and turning off the microwave when the timer runs out. All of these functions are programmed onto the microwave's microcontroller.
 
-Today, we will be working with an Arduino. An Arduino is a single-board micro-controller that can be used to build small, digital computational devices.
+If you consider your laptop, the keyboard, mouse, and webcam are input devices, and the screen and any LEDs are output devices. Some components may act as both an input and output device; consider the touchscreen on a smartphone: this operates as both an input and output device for the computer.The RAM and hard drive on your computer make up the storage, and the CPU is the controller that processes commands. Your laptop is not a microcontroller in and of itself, but it does contain many microcontrollers that help perform individual tasks within it.
 
-The Arduino device included in your Beginner Kit is technically called a [Seeeduino Lotus](https://wiki.seeedstudio.com/Seeeduino_Lotus/), but we will refer to it as an Arduino throughout these lesson materials.
+Today, we will be working with an Arduino. An Arduino is a single-board microcontroller that can be used to build small, digital computational devices.
 
-Your Arduino device is made up of a motherboard, a micro-controller (MCU), several input and output ports, and pins. Input and output devices and sensors are connected to the Arduino via pins and wires. Your beginner kit is essentially a giant motherboard that directly connects several sensors to the Arduino for us; however, additional sensors can be connected to the device using wires and pins.
+The Arduino device included in your Beginner Kit is called a [Seeeduino Lotus](https://wiki.seeedstudio.com/Seeeduino_Lotus/), but we will refer to it as an Arduino throughout these lesson materials.
+
+Your Arduino device is a motherboard that contains a microcontroller (MCU), several input and output ports, and pins. Peripheral devices and sensors (input and output devices) are connected to the Arduino using pins and wires. With traditional Arduino boards, you must connect each sensor and device to the Arduino by hand, using wires. However, your Grove beginner kit is essentially a giant motherboard that directly connects your sensors to the Arduino for us. Additional sensors can be connected to your device using wires, or by using the built-in Grove connectors.
 
 ![Seeeduino Lotus](assets/seeeduino.png)
 
-Let's look at some of the important pieces of the Arduino computer:
+See if you can locate these important parts of the Arduino computer:
 
 - Analog Pins (A0-A5)
 - Digital Pins (D0-D13)
 - Power Pins
 - IC2 Pins (SCL, SDA)
   - uses two lines to send and receive data (serial clock pin and serial data pin)
-- UART
+- UART port
   - Universal Asynchronous Receiver/Transmitter, a circuit used for serial communication between two devices
 - ATmega328P-MU
   - Micro-controller chip
 - IR Power chip
-- USB
+- USB port
 
 ### Sensors
 
@@ -74,7 +75,7 @@ You should also have two additional external sensors which we can connect to the
 
 ## Software Setup
 
-We will use the Arduino IDE to write programs to send to our Arduino. This software will allow us to write code on our laptops, then send the program to the Arduino to run on the device.
+We will use the Arduino IDE to write programs for our Arduino. This software will allow us to write code on our laptops, then send the program to the Arduino to run on the device.
 
 Install the Arduino software for your OS here: <https://www.arduino.cc/en/software>
 
@@ -96,9 +97,9 @@ The `setup()` function used to initialize the program. We can initialize pins as
 
 The `loop()` function is an infinite loop that will continually execute commands. This looping mechanism allows us to continually check for input, process, data, and control the output of the computer.
 
-The program will start when the Arduino receives power, and will restart when you press the Reset button.
+The program will start when the Arduino receives power, and will restart when you press the `Reset` button on the device.
 
-Before we can upload a program to the Arduino, you will need to confirm that the correct device is configured in the IDE.
+Before we can upload a program to the Arduino, you will need to confirm that your Arduino is connected and that the correct device is configured in your IDE.
 
 - Go to `Tools` > `Board` in the menu and confirm that `Arduino Uno` is selected.
 - Go to `Tools` > `Port` and select:

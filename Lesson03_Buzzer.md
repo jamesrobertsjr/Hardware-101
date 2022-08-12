@@ -126,8 +126,10 @@ void loop() {
 
 Great! Now, if you upload and run the program, you can hear our custom "doorbell" tune play when the button is pressed.
 
-Programming Challenge: [Chiptunes](/Challenges.md#chiptunes)
+## Programming Challenge
 
-Previous: [Lesson 2: Pressing a Button](/Lesson02_Button.md)
+Can you create your own tune? Check out this challenge for some ideas: [Chiptunes](/Challenges.md#chiptunes)
 
-Next: [Lesson 4: Digital Dice](/Lesson04_OLED.md)
+Previous Topic: [Lesson 2: Pressing a Button](/Lesson02_Button.md)
+
+Next Topic: [Lesson 4: Displaying Text](/Lesson04_OLED.md)
