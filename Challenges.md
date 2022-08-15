@@ -86,7 +86,7 @@ Using the rotary potentiometer as an input device, display the input level on th
 
 > Hint: use the `map()` function to convert the rotary input into an LED output.
 
-**Solution:** 
+**Solution:**
 
 ## Advanced
 
