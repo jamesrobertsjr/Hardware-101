@@ -16,13 +16,15 @@ The light should begin in an off state. When the button is pressed, the light sh
 
 ### Print Your Name
 
-Write a program that prints your name on the OLED.
+Write a program that prints your first and last name on the OLED.
 
 **Requirements:**
 
 Print your name on two separate lines of the OLED.
 
-**Solution:** TODO
+> Hint: use the `oled.clearDisplay();` function to wipe old data from the screen.
+
+**Solution:** [Name Example](programs/OLED_Name_Sketch.ino)
 
 ### Light Delay
 
@@ -30,9 +32,9 @@ Write a program that will blink the LED light at variable intervals based on rot
 
 **Requirements:**
 
-Use the LED output to turn the light on and off on repeat, but instead of setting the delay to a fixed value (like `1000`), use the rotary potentiometer to allow the user to adjust the delay between each light change. If the rotary is turned all the way down, the light should blink slowly. As the rotary is turned, the blinking should get faster, and when it is all the way up, the light should stay on.
+Use the LED output to turn the light on and off on repeat, but instead of setting the delay to a fixed value (like `500`), use the rotary potentiometer to allow the user to adjust the delay between each light change. If the rotary is turned all the way down, the light should blink slowly. As the rotary is turned, the blinking should get faster, and when it is all the way up, the light should stay on.
 
-**Solution:** TODO
+**Solution:** [Rotary Light Program](programs/Rotary_Light_Sketch.ino)
 
 ## Intermediate
 
@@ -46,7 +48,7 @@ Write a program that uses the light detector to sense the light level in the roo
 
 > Tip: Use the Serial Plotter to compare various light levels to see when you should turn the night light on.
 
-**Solution:** TODO
+**Solution:** [Night Light Program](programs/Night_Light_Sketch.ino)
 
 ### Chiptunes
 
@@ -56,13 +58,22 @@ Write a program that uses the light detector to sense the light level in the roo
 
 Write a program that plays a chiptune song. The program should define the frequencies and durations of the notes in the song and then play them when a button is pressed.
 
-**Example:** [The Lost Forest](/programs/Buzzer_Sketch_2.ino)
+**Solution:** [The Lost Forest](/programs/Buzzer_Sketch_2.ino)
 
 ### Temperature Display & Toggle
 
-Display temp on OLED, press button to toggle between C and F.
+Write a program that will display the current temperature on the OLED in either Fahrenheit or Celsius.
+Allow the user to toggle between F and C.
 
-TODO - include ref to temp in handbook
+> You can learn about how to integrate with the Grove's Temperature sensor here: [Detecting Temperature and Humidity](https://wiki.seeedstudio.com/Grove-Beginner-Kit-For-Arduino/#lesson-8-detecting-surrounding-temperature-humidity).
+
+**Requirements:**
+
+Download and include the `DHT` library into your program, then use it to read the temperature using your board's Temperature and Humidity sensor.
+
+By default, display the temperature in Celsius. When the user pushes the button, convert the temperature to Fahrenheit and display the temperature accordingly. The button should toggle back and forth between C and F.
+
+**Solution:** [Temperature Toggle](programs/Temperature_Sketch.ino)
 
 ### Beep Beep Selector
 
@@ -70,11 +81,13 @@ Write a program that lets the user select how many times they would like to hear
 
 **Requirements:**
 
-Use the rotary potentiometer to read input from the user. Convert the analog value to a number between `1` and `5` (hint: use modulo) and display the number on the OLED screen. When the user presses a button, take the number that is currently displayed on the screen and beep the buzzer that many times.
+Use the rotary potentiometer to read input from the user. Convert the analog value to a number between `1` and `5` and display the number on the OLED screen. When the user presses a button, take the number that is currently displayed on the screen and beep the buzzer that many times.
+
+> Hint: you can use the [map() function](https://www.arduino.cc/reference/en/language/functions/math/map/) to convert the rotary input to a value between `1` and `5`.
 
 For example, when the rotary is turned all the way down, the screen will display `1`. As the user turns the rotary, the number will increase slowly from `1` to `5` (`5` being the max value). If the user presses the button when a `3` is on the screen, the buzzer will beep three times.
 
-**Solution:** TODO
+**Solution:** [Rotary Select Beep Program](/programs/Rotary_Select_Sketch.ino)
 
 ### LED Strip Dial
 
@@ -82,19 +95,34 @@ Use the rotary potentiometer as a dial that "turns up" the lights on the RGB LED
 
 **Requirements:**
 
-Using the rotary potentiometer as an input device, display the input level on the RGB LED strip. When the dial is turned all the way "down," all of the LEDs should be off, and as the dial is turned "up," the LEDs should turn on one by one until all of them are lit up.
+Using the rotary potentiometer as an input device, display the input level on the RGB LED strip. When the dial is turned all the way "down," all of the LEDs should be off, and as the dial is turned "up," the LEDs should turn on one by one until all of them are lit up. Light up the LEDs with your favorite color!
 
 > Hint: use the `map()` function to convert the rotary input into an LED output.
 
-**Solution:**
+**Solution:** [LED Dial](/programs/LED_Dial_Sketch.ino)
 
 ## Advanced
 
 ### Color Selector
 
-Rotary select color, light up RGB
+Create a program that allows users to select the RGB values for the RGB LED strip.
 
-TODO
+**Requirements:**
+
+On the OLED, display the individual RGB values of the LED strip. When the user presses a button, they can edit the values one at a time. The user can use the rotary potentiometer to update each RGB value and see the results on the RGB LED. When they are done, the updated values are displayed on the OLED screen and the RGB LED strip.
+
+Example:
+
+1. RGB values are displayed on OLED and the corresponding color is shown on the LED strip.
+2. User presses a button to enter into edit mode. They begin by editing the Red value.
+3. As the user twists the rotary potentiometer, the Red value modulates between `0` and `255`.
+4. When the user presses the button, the selected Red value is saved and they can then begin editing the Green value.
+5. Repeat steps 3 and 4 for Green and Blue.
+6. Once all three colors have been selected, the OLED will display all three selected RGB values and the RGB LED will show that color.
+
+> Note: Since the button is hardwired to use pin `6`, you will need to plug your RGB LED strip into a different pin with your Grove connector.
+
+**Solution:**
 
 ### Double Dice Roll
 

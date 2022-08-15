@@ -203,6 +203,8 @@ void loop() {
 
 We are using the built-in `map()` function here, which is used to convert a value (e.g. `soundValue`) from one range (`0-1023`) into another (`1-10`). This takes our sound meter input and converts it into a number that fits into our LED pixel count.
 
+> Read more about the map function here: [map() Arduino Reference](https://www.arduino.cc/reference/en/language/functions/math/map/)
+
 With that, let's run the program! Once you upload the program to your Arduino, you should see the sound level in your room displayed on the RGB LED strip. Clap, talk, and make some noise to test it out!
 
 ## Programming Challenges
