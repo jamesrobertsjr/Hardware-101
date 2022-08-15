@@ -149,4 +149,4 @@ What are some ways you could improve or expand this program to make it your own?
 
 Previous Topic: [Lesson 4: Displaying Text](/Lesson04_OLED.md)
 
-Next Topic: [Lesson 6: Rotary Selector](/Lesson06_Rotary.md)
+Next Topic: [Lesson 6: Graph Data](/Lesson06_Analog.md)

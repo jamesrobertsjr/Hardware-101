@@ -1,6 +1,6 @@
 # Arduino Challenges
 
-Here are some programming challenges you can try as you continue to explore how to use your Arduino!
+Here are some programming challenges you can take on as you continue to explore the Arduino!
 
 ## Beginner
 
@@ -75,6 +75,18 @@ Use the rotary potentiometer to read input from the user. Convert the analog val
 For example, when the rotary is turned all the way down, the screen will display `1`. As the user turns the rotary, the number will increase slowly from `1` to `5` (`5` being the max value). If the user presses the button when a `3` is on the screen, the buzzer will beep three times.
 
 **Solution:** TODO
+
+### LED Strip Dial
+
+Use the rotary potentiometer as a dial that "turns up" the lights on the RGB LED strip.
+
+**Requirements:**
+
+Using the rotary potentiometer as an input device, display the input level on the RGB LED strip. When the dial is turned all the way "down," all of the LEDs should be off, and as the dial is turned "up," the LEDs should turn on one by one until all of them are lit up.
+
+> Hint: use the `map()` function to convert the rotary input into an LED output.
+
+**Solution:** 
 
 ## Advanced
 

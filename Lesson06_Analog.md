@@ -105,6 +105,6 @@ Use analog input devices to controls how the Arduino outputs data to other senso
 - [Beep Beep Selector](Challenges.md#beep-beep-selector)
 - [Clapper Light](Challenges.md#clapper-light)
 
-Previous Topic: [Lesson 5: Digital Dice](/Lesson04_OLED.md)
+Previous Topic: [Lesson 5: Digital Dice](/Lesson05_OLED_Pt2.md)
 
-Next Topic: [Lesson 7: Sound Detector](/Lesson06_Rotary.md)
+Next Topic: [Lesson 7: Sound Detector](/Lesson07_RGB_LED.md)

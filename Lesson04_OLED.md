@@ -78,7 +78,17 @@ Our program is currently using a `U8X8` constructor, which gives us access to th
 
 > The `u8x8` library also uses a subset of the `u8g2` fonts. You can find a list of available `u8x8` fonts here: [U8x8 Font List](https://github.com/olikraus/u8g2/wiki/fntlist8x8).
 
-This concludes our basic OLED example. You can move on to the next lesson to explore more fonts and drawing features, or you can skip to [Lesson 6](Lesson06_Rotary.md) to learn about a new input device.
+This concludes our basic OLED example. You can move on to the next lesson to explore more fonts and drawing features, or you can skip to [Lesson 6](Lesson06_Analog.md) to learn about analog input devices.
+
+### Example Programs
+
+The library we installed for `U8g2` includes many example programs you can run on your Arduino to test out the features available in the library. You can access them by going to `File` > `Examples` in your Arduino menu, and then selecting `U8g2` at the bottom of the list.
+
+For example, choose the `page_buffer` > `GraphicsTest` program to see an example of some of the expanded graphics available with the extended library.
+
+> Note: To run the example programs, you will have to uncomment one of the `u8g2` constructors at the top of the file. You can select the `U8G2_SSD1306_128X64_NONAME_HW_I2C` device for our Arduino.
+
+You can explore some of the other programs to see how to more fully utilize the library.
 
 ## Programming Challenge
 
