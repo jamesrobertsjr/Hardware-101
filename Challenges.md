@@ -122,7 +122,7 @@ Example:
 
 > Note: Since the button is hardwired to use pin `6`, you will need to plug your RGB LED strip into a different pin with your Grove connector.
 
-**Solution:**
+**Solution:** [LED Color Select Program](/programs/Color_Select_Sketch.ino)
 
 ### Double Dice Roll
 
@@ -145,6 +145,10 @@ Write a program that turns on the LED when a user claps twice. Clap on! Clap off
 
 **Requirements:**
 
-TODO
+Using the sound sensor, detect when the noise level goes above a certain level, i.e., when you clap your hands (the value for this sound level may change depending on your environment).
+
+If a clap occurs twice within 2 seconds (2000 milliseconds), toggle the LED on and off.
+
+> You can use the `millis()` to return a `long` value representing the current elapsed milliseconds to keep track of time.
 
 **Solution:** [Clapper Program](/programs/Clapper_Sketch.ino)
