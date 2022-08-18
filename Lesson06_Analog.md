@@ -17,7 +17,7 @@ To read the analog value from our rotary potentiometer, we'll need to register t
 Let's set up our initial program to read the analog value from our rotary:
 
 ```c++
-int ROTARY_PIN = A0;
+#define ROTARY_PIN A0
 
 int rotaryValue = 0;
 
@@ -55,7 +55,7 @@ Once you have added the `Serial.begin()` method to your `setup()` function, we c
 Here is our updated program:
 
 ```c++
-int ROTARY_PIN = A0;
+#define ROTARY_PIN A0
 
 int rotaryValue = 0;
 
@@ -107,4 +107,4 @@ Use analog input devices to controls how the Arduino outputs data to other senso
 
 Previous Topic: [Lesson 5: Digital Dice](/Lesson05_OLED_Pt2.md)
 
-Next Topic: [Lesson 7: Sound Detector](/Lesson07_RGB_LED.md)
+Next Topic: [Lesson 7: Laptop Interaction](Lesson07_Node.md)

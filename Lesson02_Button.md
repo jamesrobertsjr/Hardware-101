@@ -10,13 +10,13 @@ Similar to when we connected to the LED, to interact with the button and read it
 
 Create a new program in the Arduino IDE.
 
-To begin, we will register both the LED and the button as input and output devices in our `setup()` function, and will define global variables for the corresponding pins.
+To begin, we will register both the LED and the button as input and output devices in our `setup()` function, and will define global identifiers for the corresponding pins.
 
 > Hint: the pins are indicated next to each sensor. `D6` means that the button uses digital pin number 6.
 
 ```c++
-int LED_PIN = 4;
-int BUTTON_PIN = 6;
+#define LED_PIN 4
+#define BUTTON_PIN 6
 
 void setup() {
     pinMode(LED_PIN, OUTPUT);

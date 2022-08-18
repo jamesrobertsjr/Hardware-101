@@ -19,8 +19,8 @@ We will register the buzzer as an `OUTPUT` pin. Then, we'll send a PWM signal to
 Let's create a new buzzer program. We will start by simply programming the button to play a buzzer sound when pressed. This program will be almost identical to our LED/button example. We'll register both the button and buzzer pins as input/output devices, then read the button's value to trigger the buzzer's beep.
 
 ```c++
-int BUZZ_PIN = 5;
-int BUTTON_PIN = 6;
+#define BUZZ_PIN 5
+#define BUTTON_PIN 6
 
 void setup() {
     pinMode(BUZZ_PIN, OUTPUT);
@@ -57,45 +57,42 @@ Here are some common notes you can use with `tone()`:
 
 | Note | Value |
 | --- | --- |
-| C | 65 |
-| D | 73 |
-| E | 82 |
-| F | 87 |
-| G | 98 |
-| A | 110 |
-| B | 123 |
 | C | 131 |
+| D | 147 |
+| E | 165 |
+| F | 175 |
+| G | 198 |
+| A | 220 |
+| B | 247 |
+| C | 262 |
 
-> You can find additional notes here: [musical notes](https://github.com/bhagman/Tone#musical-notes).
+> You can find additional notes and octaves here: [musical notes](https://github.com/bhagman/Tone#musical-notes).
 
-Let's write a function that will play a tune using some of these tones. First, we'll define some constants for the notes we will need at the top of our file:
+Let's write a function that will play a tune using some of these tones. First, we'll define some constant identifiers for the notes we will need at the top of our file:
 
 ```c++
-#define NOTE_F 87
-#define NOTE_A 110
-#define NOTE_B 123
+#define NOTE_C 131
 #define NOTE_D 147
 #define NOTE_E 165
+#define NOTE_G 198
 ```
 
 We'll also define some arrays to program the melody and duration of each note in our tune (add this after our pin variables):
 
 ```c++
 int melody[] = {
-  NOTE_F, NOTE_A, NOTE_B,
-  NOTE_F, NOTE_A, NOTE_B,
-  NOTE_F, NOTE_A, NOTE_B, NOTE_E2, NOTE_D,
-  NOTE_B, NOTE_C, NOTE_B, NOTE_G, NOTE_E
+  NOTE_E, NOTE_E, NOTE_E,
+  NOTE_E, NOTE_E, NOTE_E,
+  NOTE_E, NOTE_G, NOTE_C, NOTE_D, NOTE_E
 };
 
 int durations[] = {
   1, 1, 2,
   1, 1, 2,
-  1, 1, 1, 1, 2,
   1, 1, 1, 1, 4
 };
 
-int numNotes = 16;
+int numNotes = 11;
 ```
 
 Now we can define a function at the end of the program to loop through our melody array and play each note:
@@ -103,10 +100,12 @@ Now we can define a function at the end of the program to loop through our melod
 ```c++
 void playTune() {
   for (int noteIdx = 0; noteIdx < numNotes; noteIdx++) {
+    // get the current note
+    int note = melody[noteIdx];
     // convert duration to milliseconds
-    int noteDuration = durations[noteIdx] * 250;
+    int noteDuration = durations[noteIdx] * 300;
     // play note
-    tone(BUZZ_PIN, melody[noteIdx], noteDuration);
+    tone(BUZZ_PIN, note, noteDuration);
     delay(noteDuration);
   }
 }

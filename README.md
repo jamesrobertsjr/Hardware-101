@@ -1,8 +1,10 @@
-# SES Hardware 101
+# Hardware 101
 
 ## Environment Requirements
 
-You will need the Grove Beginner Kit, as well as two additional devices (the mini PIR sensor and the LED light stick) for this workshop.
+To follow along with these resources, you will need the Grove Beginner Kit.
+
+> Note: Several of the lessons use additional devices that are external to the Beginner Kit. Depending on which workshop you attend, you may not have every device mentioned within this repository.
 
 To write programs for the Arduino and upload them to the device, you will need the [Arduino IDE](https://www.arduino.cc/en/software) software and the [USB Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) installed onto your computer. Further instructions for this setup are [below](#software-setup).
 
@@ -16,8 +18,13 @@ To write programs for the Arduino and upload them to the device, you will need t
 | [Lesson 4: Display Text](/Lesson04_OLED.md) | OLED Display |
 | [Lesson 5: Digital Dice](/Lesson05_OLED_Pt2.md) | OLED Display, Button |
 | [Lesson 6: Graph Data](/Lesson06_Rotary.md) | Rotary Potentiometer, Serial Monitor, Serial Plotter |
-| [Lesson 7: Sound Meter](/Lesson07_RGB_LED.md) | RGB LED Strip, Sound Detector |
+| [Lesson 7: Laptop Interaction](/Lesson07_Node.md) | OLED, Serial |
+| [Lesson 8: Sound Meter](/Lesson08_RGB_LED.md) | RGB LED Strip*, Sound Detector |
+| [Lesson 9: Speech Commands](/Lesson09_Speech.md) | Speech Recognizer*, Buzzer |
+| [Lesson 10: Measuring Distance](/Lesson10_Range.md) | Ultrasonic Distance Sensor*, Buzzer |
 | [Programming Challenges](/Challenges.md) | All |
+
+*Denoted devices are not included in the Grove Beginner Kit. Your workshop may or may not include these materials.
 
 ## Hardware Basics
 
@@ -68,10 +75,11 @@ Connected to our Arduino are multiple input and output sensors. Each sensor is p
 | Air Pressure Sensor | I2C | I2C |
 | Accelerometer | I2C | I2C |
 
-You should also have two additional external sensors which we can connect to the device manually:
+You may have also received some additional, external sensors, which we can connect to the device manually:
 
 - Mini PIR Sensor
 - LED Strip
+- Speech Recognizer
 
 ## Software Setup
 
@@ -87,25 +95,45 @@ When prompted, you can click "Just Download".
 
 You will also need to install a USB driver so that your computer recognizes the Arduino device when its plugged in. You can download the [CP2102 USB Driver](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers) here. Click "Downloads" when you get to the webpage and select the software for your operating system.
 
-## Arduino IDE
+### Confirm Driver Installation
 
-When you open the Arduino IDE, you will see an empty Arduino program. Each Arduino program is comprised of two primary functions: `setup()` and `loop()`.
+After the driver installation is complete, connect Arduino to the USB port of your computer with a USB cable.
 
-![arduino IDE](assets/arduino-ide.png)
+You can confirm that the driver is installed if your computer is able to recognize the device.
 
-The `setup()` function used to initialize the program. We can initialize pins as inputs and outputs, create variables, and set up events. This function will run one time when the program initially runs on the device.
+**For Windows users:** You can see it in `My Computer` -> `Properties` -> `Hardware` -> `Device Management`. The device should appear as `COM`.
 
-The `loop()` function is an infinite loop that will continually execute commands. This looping mechanism allows us to continually check for input, process, data, and control the output of the computer.
+![Device manager Windows](assets/device-manager-windows.png)
 
-The program will start when the Arduino receives power, and will restart when you press the `Reset` button on the device.
+Take note of the `COM` number, you will need to reference it later.
 
-Before we can upload a program to the Arduino, you will need to confirm that your Arduino is connected and that the correct device is configured in your IDE.
+**For Mac OS users:** You can navigate to `` on the top left corner, and choose `About this Mac` -> `System Report...` -> `USB`. A `CP2102 USB Driver` should appear.
+
+![Device manager Mac](assets/device-manager-mac.png)
+
+If the driver is not installed or if the driver is installed incorrectly, it will appear as an "unknown device" in the device manager. At this point, the driver should be reinstalled.
+
+### Setting up the Sketchbook
+
+Arduino will save all of your programs in a **Sketchbook**. This is where your "sketches," or programs, are saved. This is also where Arduino will store external libraries that you install.
+
+You are welcome to use Arduino's default location for your Sketchbook, but if you would like to access the libraries and programs already provided in this repository, you can update this location in the Arduino `Preferences`.
+
+Open the Arduino IDE and select `Preferences` from the main menu. This will open a `Settings` panel with the `Sketchbook Location` at the top. If you select `Browse`, you can navigate to your `Hardware-101` git repository and select it as your new Sketchbook location.
+
+Updating your Sketchbook location to this repository will give you access to the libraries needed in this course without having to download them. This will also allow you to open up the completed Lesson Examples and Challenge Solutions if you are interested in exploring and running them on your device
+
+> To open programs in your Sketchbook, go to `File` > `Sketchbook` in Arduino and select the program you want to open.
+
+## Connecting to the Arduino
+
+When you open the Arduino IDE, you will see an empty Arduino program. Before we can start writing code, you'll need to confirm that your Arduino is connected and that the correct device is configured in your IDE.
 
 - Go to `Tools` > `Board` in the menu and confirm that `Arduino Uno` is selected.
 - Go to `Tools` > `Port` and select:
-  - `COM1` or `COM11` for Windows (it should say `Arduino Uno` next to the correct option)
+  - `COM_`, with the number you saw in the Device Manager (e.g. `COM11` or `COM3`). It should say `Arduino Uno` next to the correct option.
   - `/dev/cu.SLAB_USBtoUART` for Mac
 
-Now we're ready to write our first program!
+With that, we're ready to write our first program in the Arduino IDE!
 
 Next: [Lesson 1: Turn on the Light](/Lesson01_LED.md)
